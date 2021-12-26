@@ -5,7 +5,6 @@ export const tickActionTypes = {
 export const serverRenderClock = () => (dispatch) => {
   return dispatch({
     type: tickActionTypes.TICK,
-    // light: !isServer,
     ts: Date.now(),
   })
 }

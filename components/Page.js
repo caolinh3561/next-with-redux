@@ -1,20 +1,16 @@
 import Link from "next/link";
 import { connect } from "react-redux";
 import Clock from "./Clock";
-import AddCount from "./AddCount";
-import ChangePageSize from "./ChangePageSize";
-import CartID from "./CartID";
 
 const Page = ({ title, linkTo, tick }) => (
-  <div>
+  <div
+    style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+  >
     <h1>{title}</h1>
-    <Clock lastUpdate={tick.lastUpdate} light={tick.light} />
-    <AddCount />
-    <ChangePageSize />
-    <CartID />
+    <Clock />
     <nav>
       <Link href={linkTo}>
-        <a>Navigate</a>
+        <a style={{"fontSize":20}}>Navigate</a>
       </Link>
     </nav>
   </div>

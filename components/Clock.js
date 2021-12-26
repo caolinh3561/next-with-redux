@@ -1,8 +1,12 @@
-export default function Clock({ lastUpdate, light }) {
+import { useSelector } from "react-redux"
+
+export default function Clock() {
+  const lastUpdate = useSelector(state => state.tick.lastUpdate);
+  if(!lastUpdate) return <></>
   return (
-    <div className={light ? 'light' : ''}>
-      <h2>this is clock</h2>
-      {format(new Date(lastUpdate))}
+    <div style={{textAlign:"center", margin:20}}>
+      <h4 style={{margin:15}}>This is clock</h4>
+      <h4 style={{margin:15}}>{format(new Date(lastUpdate))}</h4>
       <style jsx>{`
         div {
           padding: 15px;
