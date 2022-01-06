@@ -25,6 +25,6 @@ export default function Clock() {
 }
 
 const format = (t) =>
-  `${pad(t.getUTCHours())}:${pad(t.getUTCMinutes())}:${pad(t.getUTCSeconds())}`
+  `${pad(t.getUTCHours()+7)}:${pad(t.getUTCMinutes())}:${pad(t.getUTCSeconds())}`
 
 const pad = (n) => (n < 10 ? `0${n}` : n)
